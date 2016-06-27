@@ -251,7 +251,7 @@ will be emitted as an `'error'` event on the stream object but you can provide
 your own authorization logic by doing:
 
 ``` js
-stream.on('secure', function (ack) {
+stream.on('_secure', function (ack) {
     if (...) ack.accept()
     else ack.reject()
 })
