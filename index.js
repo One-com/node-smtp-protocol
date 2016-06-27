@@ -75,7 +75,7 @@ exports.connect = function () {
     }
     else if (tlsOpts) {
         stream = tls.connect(options.port, options.host, tlsOpts, function () {
-            var pending = stream.listeners('secure').length;
+            var pending = stream.listeners('_secure').length;
             var allOk = true;
             if (pending === 0 && !stream.authorized
             && tlsOpts.rejectUnauthorized !== false) {
@@ -93,8 +93,8 @@ exports.connect = function () {
                     if (--pending === 0) done();
                 }
             };
-            stream.emit('secure', ack);
-            
+            stream.emit('_secure', ack);
+
             function done () {
                 if (!allOk) {
                     stream.end();
