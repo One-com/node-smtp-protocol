@@ -1,5 +1,5 @@
 {
-    "name" : "smtp-protocol",
+    "name" : "@one.com/smtp-protocol",
     "description" : "implements the smtp protocol for clients and servers",
     "version" : "2.4.7",
     "repository" : {
